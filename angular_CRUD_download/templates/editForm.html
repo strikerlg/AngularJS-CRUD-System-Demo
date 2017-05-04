@@ -1,0 +1,30 @@
+<!-- formularz używany do aktualizacji danych w bazie danych -->
+<form class="form-horizontal alert alert-warning" id="editForm" ng-submit="UpdateInfo(currentUser)" hidden>
+<h3 class="text-center">Aktualizuj dane pracownika</h3>
+	<div class="form-group">
+		<label for="Name">Imię i nazwisko pracownika:</label>
+		<input type="text" class="form-control" ng-model="currentUser.emp_name" value="{{currentUser.name}}">
+	</div>
+	
+	<div class="form-group">
+		<label for="Email">Adres e-mail:</label>
+		<input type="email" class="form-control" ng-model="currentUser.emp_email" value="{{currentUser.emp_email}}">
+	</div>
+		<div class="form-group">
+		<label for="Gender">Płeć:</label>
+		<label for="" class="radio-inline gender">
+			<input type="radio" ng-model="currentUser.emp_gender" value="male" >Mężczyzna
+		</label>
+		<label for="" class="radio-inline gender">
+			<input type="radio" name="gender" ng-model="currentUser.emp_gender" value="female">Kobieta
+		</label>
+	</div>
+	
+	<div class="form-group">
+		<label for="Address">Adres:</label>
+		<input type="text" class="form-control" ng-model="currentUser.emp_address" value="{{currentUser.emp_address}}">
+	</div>
+	<div class="form-group">
+		<button class="btn btn-warning" ng-disabled="empList.$invalid" ng-click="updateMsg(currentUser.emp_id)">Aktualizacja</button>
+	</div>
+</form>
